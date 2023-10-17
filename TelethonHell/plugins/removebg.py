@@ -41,14 +41,14 @@ async def _(event):
     else:
         return await eod(event, f"Reply to a image/sticker with `{hl}rmbg` or give image link to remove background.")
     contentType = response.headers.get("content-type")
-    remove_bg_image = "HellBot.png"
+    remove_bg_image = "@Chowdhury_Siam.png"
     if "image" in contentType:
-        with open("HellBot.png", "wb") as removed_bg_file:
+        with open("@Chowdhury_Siam.png", "wb") as removed_bg_file:
             removed_bg_file.write(response.content)
     else:
         return await parse_error(hell, response.content.decode('UTF-8'))
     if flag and flag == "-s":
-        file = tosticker(remove_bg_image, filename="HellBot.webp")
+        file = tosticker(remove_bg_image, filename="@Chowdhury_Siam.webp")
         await event.client.send_file(
             event.chat_id,
             file,
