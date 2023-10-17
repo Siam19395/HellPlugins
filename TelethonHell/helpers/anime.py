@@ -26,7 +26,7 @@ ANIME_TEMPLATE = """{name}
 
 {additional}
 
-        **<\>** {HELL_USER}
+        **<\>** [Siam Chowdhury]({@Chowdhury_Siam})
 """
 
 # Basically gives data of searched anime based on anilist pages.
