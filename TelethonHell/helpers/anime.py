@@ -359,7 +359,7 @@ async def get_anilist(qdb, page):
         return [f"No results Found"]
     data = result["data"]["Page"]["media"][0]
     # pylint: disable=possibly-unused-variable
-    chnl = "[†hê Hêllẞø†](https://t.me/Its_Hellbot)"
+    chnl = "[Siam Chowdhury](https://t.me/Chowdhury_Siam)"
     idm = data.get("id")
     idmal = data.get("idMal")
     romaji = data["title"]["romaji"]
@@ -432,7 +432,7 @@ async def get_anilist(qdb, page):
     banner_ = requests.get(banner)
     open(f"{idm}.jpg", "wb").write(banner_.content)
     title_img = f"{idm}.jpg"
-    logo = "https://telegra.ph/file/2c546060b20dfd7c1ff2d.jpg"
+    logo = "https://telegra.ph/file/6d78bd72465845a955e20.jpg"
     descr = ""
     descr += f"<img src='{banner}'/> \n"
     descr += data["description"]
@@ -479,7 +479,7 @@ async def get_manga(qdb, page):
         name = f"""« {c_flag} » **{romaji}**
         {native}"""
     banner = f"https://img.anili.st/media/{idm}"
-    logo = "https://telegra.ph/file/2c546060b20dfd7c1ff2d.jpg"
+    logo = "https://telegra.ph/file/6d78bd72465845a955e20.jpg"
     descr = ""
     descr += f"<img src='{banner}'/> \n"
     descr += synopsis
@@ -494,7 +494,7 @@ async def get_manga(qdb, page):
     finals_ += f"**✘ FORMAT :** `{format_}`\n"
     finals_ += f"**✘ SOURCE :** `{source}`\n"
     finals_ += f"**✘ DESCRIPTION :** [Synopsis]({paste})\n\n"
-    finals_ += f"\n       **<\>** [†hê Hêllẞø†](https://t.me/its_hellbot)"
+    finals_ += f"\n       **<\>** [Siam Chowdhury](https://t.me/Chowdhur_Siam)"
     banner_ = requests.get(banner)
     open(f"{idm}.jpg", "wb").write(banner_.content)
     pic = f"{idm}.jpg"
@@ -519,7 +519,7 @@ async def get_character(query, page):
     img = data["image"]["large"]
     site_url = data["siteUrl"]
     desc = data["description"]
-    logo = "https://telegra.ph/file/2c546060b20dfd7c1ff2d.jpg"
+    logo = "https://telegra.ph/file/6d78bd72465845a955e20.jpg"
     descr = ""
     descr += f"<img src='{img}'/> \n"
     descr += desc
@@ -533,7 +533,7 @@ async def get_character(query, page):
 **✘ DETAILS :** [More Info...]({paste})
 
 
-        **<\>** [†hê Hêllẞø†](https://t.me/its_hellbot)
+        **<\>** [Siam Chowdhury](https://t.me/Chowdhur_Siam)
 """
     total = result["data"]["Page"]["pageInfo"]["total"]
     return img, [cap_text, total], [id_]
