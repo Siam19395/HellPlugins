@@ -26,7 +26,7 @@ ANIME_TEMPLATE = """{name}
 
 {additional}
 
-        **<\>** {hell_mention}
+        **<\>** {chnl}
 """
 
 # Basically gives data of searched anime based on anilist pages.
@@ -494,7 +494,7 @@ async def get_manga(qdb, page):
     finals_ += f"**✘ FORMAT :** `{format_}`\n"
     finals_ += f"**✘ SOURCE :** `{source}`\n"
     finals_ += f"**✘ DESCRIPTION :** [Synopsis]({paste})\n\n"
-    finals_ += f"\n       **<\>** [†hê Hêllẞø†](https://t.me/its_hellbot)"
+    finals_ += f"\n       **<\>** [Siam Chowdhury](https://t.me/Chowdhury_Siam)"
     banner_ = requests.get(banner)
     open(f"{idm}.jpg", "wb").write(banner_.content)
     pic = f"{idm}.jpg"
@@ -533,7 +533,7 @@ async def get_character(query, page):
 **✘ DETAILS :** [More Info...]({paste})
 
 
-        **<\>** [†hê Hêllẞø†](https://t.me/its_hellbot)
+        **<\>** [Siam Chowdhury](https://t.me/Chowdhury_Siam)
 """
     total = result["data"]["Page"]["pageInfo"]["total"]
     return img, [cap_text, total], [id_]
