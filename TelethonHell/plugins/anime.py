@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 from TelethonHell.plugins import *
 
 
-@hell_cmd(pattern="ani(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="anime(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[7:]
     if query == "":
@@ -26,7 +26,7 @@ async def _(event):
         os.remove(pic)
 
 
-@hell_cmd(pattern="man(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="manga(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[7:]
     if query == "":
@@ -47,7 +47,7 @@ async def _(event):
         os.remove(pic)
 
 
-@hell_cmd(pattern="cha(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="character(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[11:]
     if query == "":
@@ -166,15 +166,15 @@ async def _(event):
 async def quote(event):
     hell = await eor(event, "(ﾉ◕ヮ◕)ﾉ*.✧")
     q = requests.get("https://animechan.vercel.app/api/random").json()
-    await hell.edit(f"`{q['quote']}`\n\n—  **{q['cha']}** (From __{q['ani']}__)")  # dimag ka bhosda hogya bc yha pe (*﹏*;)
+    await hell.edit(f"`{q['quote']}`\n\n—  **{q['character']}** (From __{q['anime']}__)")  # dimag ka bhosda hogya bc yha pe (*﹏*;)
 
 
-CmdHelp("ani").add_command(
-    "ani", "<anime name>", "Searches for the given anime and sends the details.", "anime Darling in the franxx"
+CmdHelp("anime").add_command(
+    "anime", "<anime name>", "Searches for the given anime and sends the details.", "anime Darling in the franxx"
 ).add_command(
-    "man", "<manga name>", "Searches for the given manga and sends the details.", "manga Jujutsu kaisen"
+    "manga", "<manga name>", "Searches for the given manga and sends the details.", "manga Jujutsu kaisen"
 ).add_command(
-    "cha", "<character name>", "Searches for the given anime character and sends the details.", "character Mai Sakurajima"
+    "character", "<character name>", "Searches for the given anime character and sends the details.", "character Mai Sakurajima"
 ).add_command(
     "aniuser", "<anilist username>", "Searches for the Anilist Stats of the given user.", "aniuser meizhellboy"
 ).add_command(
