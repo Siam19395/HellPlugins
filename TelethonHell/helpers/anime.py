@@ -494,7 +494,7 @@ async def get_manga(qdb, page):
     finals_ += f"**✘ FORMAT :** `{format_}`\n"
     finals_ += f"**✘ SOURCE :** `{source}`\n"
     finals_ += f"**✘ DESCRIPTION :** [Synopsis]({paste})\n\n"
-    finals_ += f"\n       **<\>** [Siam Chowdhury](https://t.me/Chowdhur_Siam)"
+    finals_ += f"\n       **<\>** [Siam Chowdhury](https://t.me/Chowdhury_Siam)"
     banner_ = requests.get(banner)
     open(f"{idm}.jpg", "wb").write(banner_.content)
     pic = f"{idm}.jpg"
