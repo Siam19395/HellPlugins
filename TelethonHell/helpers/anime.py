@@ -26,7 +26,7 @@ ANIME_TEMPLATE = """{name}
 
 {additional}
 
-        **<\>** {chnl}
+        **<\>** {HELL_USER}
 """
 
 # Basically gives data of searched anime based on anilist pages.
