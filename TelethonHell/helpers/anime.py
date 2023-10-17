@@ -533,7 +533,7 @@ async def get_character(query, page):
 **✘ DETAILS :** [More Info...]({paste})
 
 
-        **<\>** [Siam Chowdhury](https://t.me/Chowdhur_Siam)
+        **<\>** [Siam Chowdhury](https://t.me/Chowdhury_Siam)
 """
     total = result["data"]["Page"]["pageInfo"]["total"]
     return img, [cap_text, total], [id_]
