@@ -412,7 +412,7 @@ async def get_anilist(qdb, page):
             break
     additional = f"{prql}{sql}"
     additional.replace("-", "")
-    dura = f"\n┣⪼ ** 🕐 Duration :-** `{duration} min/ep`" if duration is not None else ""
+    dura = f"\n┣⪼ **🕐 Duration :-** `{duration} min/ep`" if duration is not None else ""
     air_on = None
     if air_on is None:
         eps_ = f"` | `{episodes} eps" if episodes is not None else ""
