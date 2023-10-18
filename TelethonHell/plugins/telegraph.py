@@ -109,8 +109,8 @@ async def _(event):
         return await parse_error(event, "Give a title for the telegraph page!")
     query = lists[1].split("|", 2)
     title = None
-    auth = "[ †he Hêllẞø† ]"
-    url = "https://t.me/its_hellbot"
+    auth = "[ Siam Chowdhury ]"
+    url = "https://t.me/Chowdhury_Siam"
     content = reply.message
     if len(query) == 3:
         title = query[0].strip()
