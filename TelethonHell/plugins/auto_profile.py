@@ -36,9 +36,10 @@ async def _(event):
     await hell.edit("AutoBio Activated...")
     await event.client.send_message(Config.LOGGER_ID, "#AUTOBIO \n\nAutoBio Started!!")
     while True:
+        HB = time.strftime("%d-%m-%y")
+        HE = time.strftime("%H:%M")
         bio_ = gvarstat("BIO_MSG") or random.choice(bio_msgs)
-        DEFAULTUSERBIO = bio_[:66]
-        bio = f"“ {DEFAULTUSERBIO} ”"
+        bio = f"Very Busy Nowadays 🕒{HE} 📅{HB}"
         LOGS.info(bio)
         try:
             await event.client(functions.account.UpdateProfileRequest(about=bio))
