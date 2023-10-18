@@ -378,13 +378,13 @@ async def get_anilist(qdb, page):
     gnrs = ", ".join(data["genres"])
     gnrs_ = ""
     if len(gnrs) != 0:
-        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  `{gnrs}`"
+        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  `{', '.join(gnrs[:3])}`"
     score = data["averageScore"]
     avscd = f"\n┣⪼ **🌟 Anilist :-**  `{score}%` " if score is not None else ""
     tags = []
     for i in data["tags"]:
         tags.append(i["name"])
-    tags_ = f"\n┣⪼ **🏷️ Tags :-** `{', '.join(tags[:5])}`" if tags != [] else ""
+    tags_ = f"\n┣⪼ **🏷️ Tags :-** `{', '.join(tags[:3])}`" if tags != [] else ""
     in_ls = False
     in_ls_id = ""
     if data["title"]["english"] is not None:
@@ -422,9 +422,9 @@ async def get_anilist(qdb, page):
         air_on += f" | {eps}{th} eps"
     if air_on is None:
         eps_ = f"` | `{episodes} eps" if episodes is not None else ""
-        status_air = f"┣⪼ **🖨️ Status :-** `{status}{eps_}`"
+        status_air = f"** Status :-** `{status}{eps_}`"
     else:
-        status_air = f"┣⪼ **🖨️ Status :** `{status}`\n┣⪼ **🖨️ Next Airing :** `{air_on}`"
+        status_air = f"** Status :** `{status}`\n** Next Airing :** `{air_on}`"
     if data["trailer"] and data["trailer"]["site"] == "youtube":
         trailer_link = f"[YouTube](https://youtu.be/{data['trailer']['id']})"
     url = data.get("siteUrl")
