@@ -16,7 +16,7 @@ async def delete(event):
     await event.delete()
 
 
-@hell_cmd(pattern="purge(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="po(?:\s|$)([\s\S]*)")
 async def fastpurger(event):
     hell = event.text[7:]
     what = hell.split(" ", 1)[0]
@@ -119,12 +119,12 @@ async def selfdestruct(event):
     )
 
 
-CmdHelp("purger").add_command(
-    "purge", "<reply from a msg>", "Purges all the messages from replied message."
+CmdHelp("po").add_command(
+    "po", "<reply from a msg>", "Purges all the messages from replied message."
 ).add_command(
-    "purge -me", "<count> or <reply>", "Purges the required number of your messages", "purge -me 100"
+    "po -me", "<count> or <reply>", "Purges the required number of your messages", "purge -me 100"
 ).add_command(
-    "purge -user", "<reply> <count>", "Purges the messages of replied user from replied message.", "purge -user 50"
+    "po -user", "<reply> <count>", "Purges the messages of replied user from replied message.", "purge -user 50"
 ).add_command(
     "sd", "<time> | <text>", "Sends a self destruct text. Fill time in secs", "sd 10 | hello"
 ).add_command(
