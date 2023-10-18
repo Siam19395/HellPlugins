@@ -26,7 +26,7 @@ async def _(event):
         os.remove(pic)
 
 
-@hell_cmd(pattern="mn(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="manga(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[7:]
     if query == "":
@@ -47,7 +47,7 @@ async def _(event):
         os.remove(pic)
 
 
-@hell_cmd(pattern="char(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="character(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[11:]
     if query == "":
@@ -112,7 +112,7 @@ async def canon(event):
     await nub.edit(hellbot)
 
 
-@hell_cmd(pattern="air(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="airing(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[8:]
     hell = await eor(event, f"__Searching airing details for__ `{query}`")
@@ -172,13 +172,13 @@ async def quote(event):
 CmdHelp("anime").add_command(
     "ani", "<anime name>", "Searches for the given anime and sends the details.", "anime Darling in the franxx"
 ).add_command(
-    "mn", "<manga name>", "Searches for the given manga and sends the details.", "manga Jujutsu kaisen"
+    "manga", "<manga name>", "Searches for the given manga and sends the details.", "manga Jujutsu kaisen"
 ).add_command(
-    "char", "<character name>", "Searches for the given anime character and sends the details.", "character Mai Sakurajima"
+    "character", "<character name>", "Searches for the given anime character and sends the details.", "character Mai Sakurajima"
 ).add_command(
     "aniuser", "<anilist username>", "Searches for the Anilist Stats of the given user.", "aniuser meizhellboy"
 ).add_command(
-    "air", "<anime name>", "Searches for the airing info of given anime."
+    "airing", "<anime name>", "Searches for the airing info of given anime."
 ).add_command(
     "fillers", "<anime name>", "Searches for the filler episodes of given Anime.", "fillers Naruto"
 ).add_command(
