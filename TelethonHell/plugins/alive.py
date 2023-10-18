@@ -20,7 +20,7 @@ ALIVE_TEMP = """
 ┣─ <b>» Uptime:</b> <i>{uptime}</i>
 ┣─ <b>» Ping:</b> <i>{ping}</i>
 ╰──────────────
-<b><i>»»» <a href='https://t.me/its_hellbot'>[†hê Hêllẞø†]</a> «««</i></b>
+<b><i>»»» <a href='https://t.me/Chowdhury_Siam'>[KING]</a> «««</i></b>
 """
 
 msg = """{}\n
@@ -65,7 +65,7 @@ async def _(event):
                 pic_list.append(c)
         PIC = random.choice(pic_list)
     else:
-        PIC = "https://te.legra.ph/file/ea9e11f7c9db21c1b8d5e.mp4"
+        PIC = "https://te.legra.ph/file/1dfff196981308f5f4982.jpg"
     end = datetime.datetime.now()
     ping = (end - start).microseconds / 1000
     alive = alive_temp.format(
@@ -86,7 +86,7 @@ async def _(event):
     await hell.delete()
 
 
-@hell_cmd(pattern="Siam$")
+@hell_cmd(pattern="siam$")
 async def hell_a(event):
     userid, _, _ = await client_id(event)
     uptime = await get_time((time.time() - StartTime))
@@ -107,7 +107,7 @@ async def hell_a(event):
 CmdHelp("alive").add_command(
     "alive", None, "Shows the default Alive message."
 ).add_command(
-    "Siam", None, "Shows inline Alive message."
+    "siam", None, "Shows inline Alive message."
 ).add_warning(
     "✅ Harmless Module"
 ).add()
