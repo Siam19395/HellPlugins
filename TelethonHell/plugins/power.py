@@ -12,17 +12,17 @@ async def restart(event):
             Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
         except BaseException:
             return await parse_error(event, "`HEROKU_API_KEY` is wrong. Re-Check in config vars.", False)
-        await eor(event, f"✅ **Restarted Dynos** \n**Type** `{hl}ping` **after 1 minute to check if I am working !**")
+        await eor(event, f"✅ **Restarted** \n**Type** `{hl}ping` **after 1 minute to check if I am working !**")
         app = Heroku.apps()[Config.HEROKU_APP_NAME]
         app.restart()
     else:
-        await eor(event, f"✅ **Restarted Hêllẞø†** \n**Type** `{hl}ping` **after 1 minute to check if I am working !**")
+        await eor(event, f"✅ **Restarted Userbot** \n**Type** `{hl}ping` **after 1 minute to check if I am working !**")
         await event.client.disconnect()
 
 
 @hell_cmd(pattern="restart$")
 async def re(hell):
-    event = await eor(hell, "Restarting Hêllẞø† ...")
+    event = await eor(hell, "Restarting Userbot ...")
     try:
         await restart(event)
     except CancelledError:
@@ -33,13 +33,13 @@ async def re(hell):
 
 @hell_cmd(pattern="reload$")
 async def rel(event):
-    await eor(event, "**Reloaded HellBot!** \n\n__This might take a minute.__")
+    await eor(event, "**Reloaded Userbot!** \n\n__This might take a minute.__")
     await reload_hellbot()
 
 
 @hell_cmd(pattern="shutdown$")
 async def down(event):
-    await eor(event, "**[ ⚠️ ]** \n**Hêllẞø† is now turned off. Manually turn it on to start again.**")
+    await eor(event, "**[ ⚠️ ]** \n**Userbot is now turned off. Manually turn it on to start again.**")
     if HEROKU_APP is not None:
         HEROKU_APP.process_formation()["worker"].scale(0)
     else:
