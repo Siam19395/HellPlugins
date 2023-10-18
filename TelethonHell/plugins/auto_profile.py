@@ -20,7 +20,7 @@ async def _(event):
     while True:
         HB = time.strftime("%d-%m-%y")
         HE = time.strftime("%H:%M")
-        name = f"🕒{HE} ⚡{HELL_USER}⚡ 📅{HB}"
+        name = f"🕒{HE} {HELL_USER} 📅{HB}"
         LOGS.info(name)
         try:
             await event.client(functions.account.UpdateProfileRequest(first_name=name))
@@ -39,7 +39,7 @@ async def _(event):
         HB = time.strftime("%d-%m-%y")
         HE = time.strftime("%H:%M")
         bio_ = gvarstat("BIO_MSG") or random.choice(bio_msgs)
-        bio = f"Very Busy Nowadays 🕒{HE} 📅{HB}"
+        bio = f"Very Busy Nowadays  🕒 {HE}  📅 {HB}"
         LOGS.info(bio)
         try:
             await event.client(functions.account.UpdateProfileRequest(about=bio))
