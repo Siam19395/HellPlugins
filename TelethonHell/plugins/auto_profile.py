@@ -39,7 +39,7 @@ async def _(event):
         HB = time.strftime("%d-%m-%y")
         HE = time.strftime("%H:%M")
         bio_ = gvarstat("BIO_MSG") or random.choice(bio_msgs)
-        bio = f"Time:- • 🕒 {HE}__📅 {HB} • Watch Anime:- @Anime_Kun_Channel"
+        bio = f"Time:- • 🕒 {HE} ~ 📅 {HB} • Anime:- @Anime_Kun_Channel"
         LOGS.info(bio)
         try:
             await event.client(functions.account.UpdateProfileRequest(about=bio))
