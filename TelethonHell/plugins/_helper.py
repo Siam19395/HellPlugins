@@ -9,7 +9,7 @@ msg = f"""
 **⚡ Legendary Userbot ⚡**
   •        [📑 Repo 📑](https://github.com/Siam19395/HellBot)
   •        [ Main Channel ](https://t.me/Anime_Kun_Channel)
-  •  ©️ {hell_channel} ™
+  •  ©️ {HELL_MENTION} ™
 """
 
 
