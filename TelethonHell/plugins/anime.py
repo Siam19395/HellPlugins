@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 from TelethonHell.plugins import *
 
 
-@hell_cmd(pattern="ani(?:\s|$)([\s\S]*)")
+@hell_cmd(pattern="anime(?:\s|$)([\s\S]*)")
 async def _(event):
     query = event.text[7:]
     if query == "":
@@ -170,7 +170,7 @@ async def quote(event):
 
 
 CmdHelp("anime").add_command(
-    "ani", "<anime name>", "Searches for the given anime and sends the details.", "anime Darling in the franxx"
+    "anime", "<anime name>", "Searches for the given anime and sends the details.", "anime Darling in the franxx"
 ).add_command(
     "manga", "<manga name>", "Searches for the given manga and sends the details.", "manga Jujutsu kaisen"
 ).add_command(
