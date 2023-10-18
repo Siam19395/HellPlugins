@@ -11,7 +11,7 @@ FILLERS_ = {}
 
 
 # Template for anime queries
-ANIME_TEMPLATE = """**{name}**
+ANIME_TEMPLATE = """{name}
 
 ╭━━━❰**Anime lnfo**❱━━➣ 
 ┣⪼ **ℹ️ Source :-** `{source}`
@@ -23,8 +23,9 @@ ANIME_TEMPLATE = """**{name}**
 ┣⪼ **📂 Subtitle :-** `English Subtitles`
 ╰━━━━━━━━━━━━━━━━━━➣
 ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•
-┣⪼ ⬇️ **Download ---->** • **{name}** •
+┣⪼ ⬇️ **Download ---->** • {name} •
 ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•
+
         **<\>** {chnl}
 """
 
@@ -387,9 +388,9 @@ async def get_anilist(qdb, page):
     in_ls = False
     in_ls_id = ""
     if data["title"]["english"] is not None:
-        name = f"« 📛 » **{english}** (`{native}`)"
+        name = f"**{english}** (`{native}`)"
     else:
-        name = f"« 📛 » **{romaji}** (`{native}`)"
+        name = f"**{romaji}** (`{native}`)"
     prql, sql = "", ""
     for i in prqlsql:
         if i["relationType"] == "PREQUEL":
@@ -413,12 +414,6 @@ async def get_anilist(qdb, page):
     additional.replace("-", "")
     dura = f"\n┣⪼ ** 🕐 Duration :-** `{duration} min/ep`" if duration is not None else ""
     air_on = None
-    if data["nextAiringEpisode"]:
-        nextAir = data["nextAiringEpisode"]["timeUntilAiring"]
-        air_on = make_it_rw(nextAir * 1000)
-        eps = data["nextAiringEpisode"]["episode"]
-        th = pos_no(str(eps))
-        air_on += f" | {eps}{th} eps"
     if air_on is None:
         eps_ = f"` | `{episodes} eps" if episodes is not None else ""
         status_air = f"** Status :-** `{status}{eps_}`"
