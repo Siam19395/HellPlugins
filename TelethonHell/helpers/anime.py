@@ -388,9 +388,9 @@ async def get_anilist(qdb, page):
     in_ls = False
     in_ls_id = ""
     if data["title"]["english"] is not None:
-        name = f"**{english}** (`{native}`)"
+        name = f"**{english}**"
     else:
-        name = f"**{romaji}** (`{native}`)"
+        name = f"**{romaji}**"
     prql, sql = "", ""
     for i in prqlsql:
         if i["relationType"] == "PREQUEL":
