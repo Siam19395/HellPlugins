@@ -17,10 +17,10 @@ ANIME_TEMPLATE = """{name}
 ┣⪼ **ℹ️ Source :-** `{source}`
 ┣⪼ **🗯️ Type :-**  `{formats}`{avscd}{dura}
 ┣⪼ **🔞 Adult Rated :-** `{adult}`
-┣⪼ **🖨️** {status_air}{gnrs_}{tags_}
 ┣⪼ **🎧 Audio :-** `English & Japnese`
 ┣⪼ **📷 Quality :-** `1080p`
 ┣⪼ **📂 Subtitle :-** `English Subtitles`
+┣⪼ **🖨️** {status_air}{gnrs_}{tags_}
 ╰━━━━━━━━━━━━━━━━━━➣
 ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•
 ┣⪼ ⬇️ **Download ---->** • {name} •
@@ -378,13 +378,13 @@ async def get_anilist(qdb, page):
     gnrs = ", ".join(data["genres"][:3])
     gnrs_ = ""
     if len(gnrs) != 0:
-        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  `{gnrs}`"
+        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  **__{gnrs}__**"
     score = data["averageScore"]
     avscd = f"\n┣⪼ **🌟 Anilist :-**  `{score}%` " if score is not None else ""
     tags = []
     for i in data["tags"]:
         tags.append(i["name"])
-    tags_ = f"\n┣⪼ **🏷️ Tags :-** `{', '.join(tags[:3])}`" if tags != [] else ""
+    tags_ = f"\n┣⪼ **🏷️ Tags :-** **__{', '.join(tags[:3])}__**" if tags != [] else ""
     in_ls = False
     in_ls_id = ""
     if data["title"]["english"] is not None:
