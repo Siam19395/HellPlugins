@@ -11,7 +11,7 @@ FILLERS_ = {}
 
 
 # Template for anime queries
-ANIME_TEMPLATE = """{name}
+ANIME_TEMPLATE = """**{name}**
 
 ╭━━━❰**Anime lnfo**❱━━➣ 
 ┣⪼ **ℹ️ Source :-** `{source}`
@@ -21,7 +21,6 @@ ANIME_TEMPLATE = """{name}
 ┣⪼ **🎧 Audio :-** `English & Japnese`
 ┣⪼ **📷 Quality :-** `1080p`
 ┣⪼ **📂 Subtitle :-** `English Subtitles`
-┣⪼ {additional}
 ╰━━━━━━━━━━━━━━━━━━➣
 ╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━•
 ┣⪼ ⬇️ **Download ---->** • **{name}** •
@@ -375,10 +374,10 @@ async def get_anilist(qdb, page):
     prqlsql = data.get("relations").get("edges")
     adult = data.get("isAdult")
     trailer_link = "N/A"
-    gnrs = ", ".join(data["genres"])
+    gnrs = ", ".join(data["genres"][:3])
     gnrs_ = ""
     if len(gnrs) != 0:
-        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  `{', '.join(gnrs[:3])}`"
+        gnrs_ = f"\n┣⪼ **🎨 Genres :-**  `{gnrs}`"
     score = data["averageScore"]
     avscd = f"\n┣⪼ **🌟 Anilist :-**  `{score}%` " if score is not None else ""
     tags = []
@@ -388,9 +387,9 @@ async def get_anilist(qdb, page):
     in_ls = False
     in_ls_id = ""
     if data["title"]["english"] is not None:
-        name = f"« {c_flag} » **{english}** (`{native}`)"
+        name = f"« 📛 » **{english}** (`{native}`)"
     else:
-        name = f"« {c_flag} » **{romaji}** (`{native}`)"
+        name = f"« 📛 » **{romaji}** (`{native}`)"
     prql, sql = "", ""
     for i in prqlsql:
         if i["relationType"] == "PREQUEL":
@@ -408,7 +407,7 @@ async def get_anilist(qdb, page):
                 if i["node"]["title"]["english"] is not None
                 else i["node"]["title"]["romaji"]
             )
-            sql += f"**• SEQUEL :** `{sname}`\n"
+            sql += f"** SEQUEL :** `{sname}`\n"
             break
     additional = f"{prql}{sql}"
     additional.replace("-", "")
