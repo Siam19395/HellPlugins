@@ -55,11 +55,11 @@ async def on_afk1(event):
         msg = None
         if afk1.reason is None:
             message_to_reply = (
-                f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since:**  `{total_afk_time}`"
+                f"**I'm currently AFK!** \n\n**⏰ AFK Since:**  `{total_afk_time}`"
             )
         else:
             message_to_reply = (
-                f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since:**  `{total_afk_time}`\n"
+                f"**I'm currently AFK!** \n\n**⏰ AFK Since:**  `{total_afk_time}`\n"
                 + f"\n**💬 Reason:** {afk1.reason}"
             )
         msg = await event.reply(message_to_reply, file=afk1.afk_pic)
@@ -89,7 +89,7 @@ async def start_afk1(event):
         if afk1.reason is None:
             addgvar("AFK", "YES")
             x = await event.client.send_message(
-                event.chat_id, f"**I'm going afk`/offline🚶**", file=afk1.afk_pic
+                event.chat_id, f"**I'm going afk🚶**", file=afk1.afk_pic
             )
             xy = await event.client.send_message(
                 Config.LOGGER_ID,
@@ -105,7 +105,7 @@ async def start_afk1(event):
             addgvar("AFK", "YES")
             x = await event.client.send_message(
                 event.chat_id,
-                f"**I'm going afk/offline🚶**\n\n**Because:** `{afk1.reason}`",
+                f"**I'm going afk🚶**\n\n**Because:** `{afk1.reason}`",
                 file=afk1.afk_pic,
             )
             xy = await event.client.send_message(
@@ -161,11 +161,11 @@ if H2:
             msg = None
             if afk2.reason:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since:**  `{total_afk_time}`"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since:**  `{total_afk_time}`"
                 )
             else:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since:**  `{total_afk_time}`\n"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since:**  `{total_afk_time}`\n"
                     + f"\n**💬 Reason :** {afk2.reason}"
                 )
             msg = await event.reply(message_to_reply, file=afk2.afk_pic)
@@ -194,7 +194,7 @@ if H2:
             if afk2.reason is None:
                 addgvar("AFK2", "YES")
                 x = await event.client.send_message(
-                    event.chat_id, f"**I'm going afk/offline🚶**", file=afk2.afk_pic
+                    event.chat_id, f"**I'm going afk🚶**", file=afk2.afk_pic
                 )
                 xy = await event.client.send_message(
                     Config.LOGGER_ID,
@@ -210,7 +210,7 @@ if H2:
                 addgvar("AFK2", "YES")
                 x = await event.client.send_message(
                     event.chat_id,
-                    f"**I'm going afk/offline🚶**\n\n**Because :** `{afk2.reason}`",
+                    f"**I'm going afk🚶**\n\n**Because :** `{afk2.reason}`",
                     file=afk2.afk_pic,
                 )
                 xy = await event.client.send_message(
@@ -263,11 +263,11 @@ if H3:
             msg = None
             if afk3.reason is None:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`"
                 )
             else:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`\n"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`\n"
                     + f"\n**💬 Reason :** {afk3.reason}"
                 )
             msg = await event.reply(message_to_reply, file=afk3.afk_pic)
@@ -298,7 +298,7 @@ if H3:
             if afk3.reason is None:
                 addgvar("AFK3", "YES")
                 x = await event.client.send_message(
-                    event.chat_id, f"**I'm going afk/offline🚶**", file=afk3.afk_pic
+                    event.chat_id, f"**I'm going afk🚶**", file=afk3.afk_pic
                 )
                 xy = await event.client.send_message(
                     Config.LOGGER_ID,
@@ -314,7 +314,7 @@ if H3:
                 addgvar("AFK3", "YES")
                 x = await event.client.send_message(
                     event.chat_id,
-                    f"**I'm going afk/offline🚶**\n\n**Because :** `{afk3.reason}`",
+                    f"**I'm going afk🚶**\n\n**Because :** `{afk3.reason}`",
                     file=afk3.afk_pic,
                 )
                 xy = await event.client.send_message(
@@ -353,7 +353,7 @@ if H4:
             delgvar("AFK4")
             await event.client.send_message(
                 Config.LOGGER_ID,
-                f"#AFKFALSE \n\n**AFK mode** = `False`\n**AFK/OFFLINE Timer :** `{total_afk_time}`",
+                f"#AFKFALSE \n\n**AFK mode** = `False`\n**AFK Timer :** `{total_afk_time}`",
             )
             await asyncio.sleep(10)
             await hellbot.delete()
@@ -372,11 +372,11 @@ if H4:
             msg = None
             if afk4.reason is None:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`"
                 )
             else:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`\n"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`\n"
                     + f"\n**💬 Reason :** {afk4.reason}"
                 )
             msg = await event.reply(message_to_reply, file=afk4.afk_pic)
@@ -405,7 +405,7 @@ if H4:
             if afk4.reason is None:
                 addgvar("AFK4", "YES")
                 x = await event.client.send_message(
-                    event.chat_id, f"**I'm going afk/offline🚶**", file=afk4.afk_pic
+                    event.chat_id, f"**I'm going afk🚶**", file=afk4.afk_pic
                 )
                 xy = await event.client.send_message(
                     Config.LOGGER_ID,
@@ -421,7 +421,7 @@ if H4:
                 addgvar("AFK4", "YES")
                 x = await event.client.send_message(
                     event.chat_id,
-                    f"**I'm going afk/offline🚶**\n\n**Because :** `{afk4.reason}`",
+                    f"**I'm going afk🚶**\n\n**Because :** `{afk4.reason}`",
                     file=afk4.afk_pic,
                 )
                 xy = await event.client.send_message(
@@ -477,11 +477,11 @@ if H5:
             msg = None
             if afk5.reason is None:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`"
                 )
             else:
                 message_to_reply = (
-                    f"**I'm currently AFK/OFFLINE!** \n\n**⏰ AFK/OFFLINE Since :**  `{total_afk_time}`\n"
+                    f"**I'm currently AFK!** \n\n**⏰ AFK Since :**  `{total_afk_time}`\n"
                     + f"\n**💬 Reason :** {afk5.reason}"
                 )
             msg = await event.reply(message_to_reply, file=afk5.afk_pic)
@@ -510,7 +510,7 @@ if H5:
             if afk5.reason is None:
                 addgvar("AFK5", "YES")
                 x = await event.client.send_message(
-                    event.chat_id, f"**I'm going afk/offline🚶**", file=afk5.afk_pic
+                    event.chat_id, f"**I'm going afk🚶**", file=afk5.afk_pic
                 )
                 xy = await event.client.send_message(
                     Config.LOGGER_ID,
@@ -526,7 +526,7 @@ if H5:
                 addgvar("AFK5", "YES")
                 x = await event.client.send_message(
                     event.chat_id,
-                    f"**I'm going afk/offline🚶**\n\n**Because :** `{afk5.reason}`",
+                    f"**I'm going afk🚶**\n\n**Because :** `{afk5.reason}`",
                     file=afk5.afk_pic,
                 )
                 xy = await event.client.send_message(
