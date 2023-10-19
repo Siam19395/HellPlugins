@@ -26,7 +26,6 @@ ANIME_TEMPLATE = """{name}
 ┣⪼ ⬇️ **Download ---->** • {name} •
 ╰━━━━━━━━━━━━━━━━━━━━━•
 
-        **<\>** {chnl}
 """
 
 # Basically gives data of searched anime based on anilist pages.
